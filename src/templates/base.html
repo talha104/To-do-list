@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+	<title>{% block head-title %}To-Do List{% endblock %}</title>
+{% include 'snippets/css.html' %}
+</head>
+<body>
+<div align="center">
+	<h1>
+		To-Do List
+	</h1>
+
+	{% if messages %}
+		{% for message in messages %}
+			<div class="alert alert-{{ message.tags }}">
+				{{ message }}
+			</div>
+		{% endfor %}
+	{% endif %}
+
+	{% include "snippets/sidebar.html" %}
+
+{% block content %}{% endblock content %}
+
+</div>
+
+{% include 'snippets/js.html' %}
+</body>
+</html>

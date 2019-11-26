@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block head-title %}Register || {{ block.super }}{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-3">Join Today</legend>
+				{{ form|crispy }}
+			</fieldset>
+			<div class="form-group">
+				<button class="btn btn-outline-info pb-2" type="submit">Sign Up</button>
+			</div>
+		</form>
+		<div class="border-top pt-2 mb-3" >
+			<small class="text-muted">
+				Already Have An Account? <a class="ml-1" href="{% url 'login' %}">Sign In</a>
+			</small>
+		</div>
+	</div>
+{% endblock %}
+<!--mb stands for margin bottom
+	'btn btn-outline-info' makes the button look good
+	pt stands for padding top
+	(margin deals with space outside the border while padding deals with the inner space)––> 

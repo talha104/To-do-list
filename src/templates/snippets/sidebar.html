@@ -1,0 +1,12 @@
+<div class="container">
+{% if user.is_authenticated %}
+	<button class="btn btn-outline-info"><a href="{% url 'logout' %}">Logout</a></button>
+	<button class="btn btn-outline-info"><a href="{% url 'profile' %}">Profile</a></button>
+{% else %}
+	<button class="btn btn-outline-info"><a href="{% url 'login' %}">Login</a></button>
+	<button class="btn btn-outline-info"><a href="/register">Register</a></button>
+{% endif %}
+
+	<button class="btn btn-outline-info"><a href="/about/">About</a></button>
+	<button class="btn btn-outline-info"><a href="/contact/">Contact</a></button>
+</div> 
